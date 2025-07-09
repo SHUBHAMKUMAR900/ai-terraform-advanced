@@ -1,0 +1,20 @@
+provider "aws" {
+  region = "{{ region }}"
+}
+
+resource "aws_instance" "{{ name }}" {
+  ami           = "{{ ami }}"
+  instance_type = "{{ instance_type }}"
+
+  tags = {
+    Name = "{{ name }}"
+  }
+}
+
+output "instance_id" {
+  value = aws_instance.{{ name }}.id
+}
+
+output "instance_public_ip" {
+  value = aws_instance.{{ name }}.public_ip
+}

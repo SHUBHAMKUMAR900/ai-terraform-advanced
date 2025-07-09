@@ -1,0 +1,11 @@
+provider "aws" {
+  region = "{{ region }}"
+}
+
+resource "aws_s3_bucket" "{{ name }}" {
+  bucket = "{{ name }}"
+  acl    = "private"
+  tags = {
+    Name = "{{ name }}"
+  }
+}

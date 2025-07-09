@@ -1,0 +1,11 @@
+provider "aws" {
+  region = "{{ region }}"
+}
+
+resource "aws_lambda_function" "{{ name }}" {
+  function_name = "{{ name }}"
+  role          = "{{ role_arn }}"
+  handler       = "{{ handler }}"
+  runtime       = "{{ runtime }}"
+  filename      = "{{ filename }}"
+}

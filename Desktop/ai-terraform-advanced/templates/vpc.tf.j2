@@ -1,0 +1,10 @@
+provider "aws" {
+  region = "{{ region }}"
+}
+
+resource "aws_vpc" "{{ name }}" {
+  cidr_block = "{{ cidr_block }}"
+  tags = {
+    Name = "{{ name }}"
+  }
+}
